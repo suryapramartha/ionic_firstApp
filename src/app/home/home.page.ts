@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ToastController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private toastController: ToastController,
+    private router: Router
+    ) {}
+
+  async showToast(){
+    const x = await this.toastController.create({
+      message: 'Hello from suryapramartha',
+      duration: 3000
+    });
+    x.present();
+  }
+
+  navigateToDetail() {
+    this.router.navigateByUrl('/detail');
+  }
 
 }
