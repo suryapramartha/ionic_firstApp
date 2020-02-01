@@ -14,7 +14,7 @@ export class HomePage {
     private router: Router
     ) {}
 
-  async showToast(){
+  async showToast() {
     const x = await this.toastController.create({
       message: 'Hello from suryapramartha',
       duration: 3000
